@@ -1,0 +1,112 @@
+﻿.category-items {
+    display: flex;
+}
+
+.category-items .picture {
+    width: 360px;
+    height: 370px;
+    background-image: url(http://i.ytimg.com/vi/ReF6iQ7M5_A/maxresdefault.jpg);
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+}
+
+.category-items .item {
+    margin: 0 10px 10px 0;
+}
+
+    .category-items .item:first-child {
+    }
+
+    .category-items .item .info {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+        background-color: rgba(255,255,255,.8);
+        padding: 0 20px;
+        font-size: 16pt;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .category-items .item .info .name {
+            white-space: nowrap;
+            overflow: hidden;
+            flex: 1 1 auto;
+            background: -webkit-linear-gradient(left, black 80%, transparent 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .category-items .item .info .price {
+            color: #d9644a;
+            font-size: 24pt;
+        
+            flex: 0 0 auto;
+}
+
+.amount {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4ea686;
+    color: white;
+    font-size: 24pt;
+}
+
+    .amount .number {
+        text-align: center;
+    }
+
+    .amount .label {
+        font-size: 11pt;
+        font-weight: 100;
+    }
+
+    .amount button {
+        width: 40px;
+        height: 40px;
+        margin: 20px;
+        cursor: pointer;
+        outline: none;
+        border: 2px solid white;
+        box-sizing: border-box;
+        background-color: inherit;
+    }
+
+    .amount .decrement:before {
+        content: "-";
+        color: white;
+        font-size: 13pt;
+        line-height: 11px;
+    }
+
+    .amount .increment:before {
+        content: "+";
+        color: white;
+        font-size: 28pt;
+        line-height: 37px;
+    }
+
+    .amount input {
+        width: 50px;
+        height: 30px;
+        display: block;
+        outline: none;
+        font-size: inherit;
+        text-align: center;
+        -webkit-appearance: none;
+        background-color: inherit;
+        border: none;
+        color: inherit;
+        /* font-size: 24pt; */
+        font-weight: 100;
+    }
+
+        .amount input::-webkit-outer-spin-button,
+        .amount input::-webkit-inner-spin-button {
+            display: none;
+        }

@@ -1,0 +1,106 @@
+﻿.basket {
+    width: 600px;
+    max-height: 560px;
+    overflow: auto;
+    background-color: #d9644a;
+    color: white;
+    font-size: 20pt;
+    font-weight: 100;
+}
+
+    .basket .button {
+        padding: 5px 15px;
+        border: 2px solid white;
+        box-sizing: content-box;
+        background-color: transparent;
+        font-size: 11pt;
+        color: white;
+        width: auto;
+    }
+
+    .basket .row {
+        display: flex;
+        padding: 5px 16px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.basket .item-list .row:nth-child(odd) {
+    background-color: #bf613f;
+}
+
+.basket .summary {
+    background-color: #343e40;
+}
+
+.basket .name {
+    flex: 4 1 100px;
+    display: flex;
+    align-items: center;
+}
+
+.amount {
+}
+
+.basket .price {
+    flex: 1 0 70px;
+    text-align: right;
+}
+
+.basket .name span {
+    margin-left: 10px;
+    flex: 1 0 10px;
+    white-space: nowrap;
+    font-weight: 400;
+    overflow: hidden;
+    background: -webkit-linear-gradient(left, white 80%, transparent 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.basket .delete {
+    border: 2px solid white;
+    background-color: transparent;
+    background: url('../image/Delete.png') no-repeat 50%;
+    box-sizing: content-box;
+    margin-top: 4px;
+    color: inherit;
+}
+
+.basket .amount {
+    background-color: transparent;
+    font-size: 20pt;
+    display: flex;
+    margin-top: 0;
+}
+
+.basket button {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.basket .decrement:before {
+    font-size: 10pt;
+}
+
+.basket .amount .increment:before {
+    font-size: 10pt;
+    line-height: 15px;
+}
+
+.basket .clear-all {
+    width: 100px;
+    height: 30px;
+    font-size: 17px;
+    line-height: 28px;
+    color: white;
+    background-color: transparent;
+    font-weight: 100;
+    border: 2px solid white;
+}
+
+.basket .row.controls {
+    background-color: #4ea686;
+    padding: 12px 16px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="style/Shop.css" />
+    <link rel="stylesheet" href="style/Categories.css" />
+    <link rel="stylesheet" href="style/Items.css" />
+    <link rel="stylesheet" href="style/Basket.css" />
+</head>
+<body>
+    <article class="page" id="page">
+
+        <header>
+            <button class="navigate-back" rv-on-click="model.navigateBack"></button>
+            <h1>Hey, dude! By some pictures!</h1>
+            <section class="basket-widget">
+                <div rv-on-click="model.navigateToBasket">
+                    <img src="image/cart-icon.png" />
+                    <div class="sum">
+                        <span rv-text="model.sum | currency"></span>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="content">
+
+            <div class="horizontal-scroll-wrapper" id="categoriesScroll">
+                <div class="horizontal-scroll" id="categoryList">
+                    <div class="tiles" rv-show="model.currentPageIsCategories">
+                        <div class="tile small" rv-each-category="model.categories">
+                            <div class="category" rv-on-click="category.browseItems">
+                                <div class="category-picture" rv-backgroundimageurl="category.picturePath">
+                                </div>
+                                <h3 class="category-name">
+                                    {category.name}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="horizontal-scroll-wrapper" id="itemsScroll"  rv-show="model.currentPageIsItems">
+                <div class="horizontal-scroll category-items" id="categoryItems">
+                    <div class="item" rv-each-item="model.currentCategory.items">
+                        <div class="picture" rv-backgroundimageurl="item.picturePath">
+                            <div class="info">
+                                <div class="name">{item.name}</div>
+                                <div class="price">{item.price | currency }</div>
+                            </div>
+                        </div>
+                        <div class="amount">
+                            <button class="decrement" rv-on-click="item.decrementAmount"></button>
+                            <div class="number">
+                                <p class="label">amount</p>
+                                <input type="number" rv-value="item.amount | positive | integer | number" />
+                            </div>
+                            <button class="increment"  rv-on-click="item.incrementAmount"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="basket" id="basket" rv-show="model.currentPageIsBasket">
+                <div class="row">
+                    <div class="name">Shop list</div>
+                    <div class="amount">Amount</div>
+                    <div class="price">Price</div>
+                </div>
+
+                <div class="item-list">
+                    <div class="row" rv-each-item="model.itemsInBasket">
+                        <div class="name">
+                            <button class="delete" rv-on-click="item.removeFromBasket"></button>
+                            <span rv-text="item.name"></span>
+                        </div>
+                        <div class="amount">
+                            <button class="decrement" rv-on-click="item.decrementAmount"></button>
+                            <div class="number">
+                                <input type="number" rv-value="item.amount | positive | integer | number" />
+                            </div>
+                            <button class="increment" rv-on-click="item.incrementAmount"></button>
+                        </div>
+                        <div class="price" rv-text="item.sum < amount | currency"></div>
+                    </div>
+                </div>
+
+                <div class="row summary">
+                    <button class="clear-all" rv-on-click="model.clearAll">Clear all</button>
+                    <div class="sum">
+                        <span>Sum</span>
+                        <span rv-text="model.sum | currency"></span>
+                    </div>
+                </div>
+
+                <div class="row controls">
+                    <button class="button" rv-on-click="model.navigateToCategories">Continue shoppping</button>
+                    <button class="button" rv-on-click="model.buy">Buy</button>
+                </div>
+            </div>
+        </section>
+    </article>
+
+
+    <script src="script/vendor/iscroll.js"></script>
+    <script src="script/vendor/sightglass.js"></script>
+    <script src="script/vendor/rivets.js"></script>
+
+    <script src="script/formatters.js"></script>
+    <script src="script/binders.js"></script>
+
+    <script src="script/FakeData.js"></script>
+    <script src="script/ShopItem.js"></script>
+    <script src="script/ShopCategory.js"></script>
+    <script src="script/ShopViewModel.js"></script>
+    <script src="script/Shop.js"></script>
+
+    <!--
+    
+    <script src="script/Basket.js"></script>
+    <script src="script/Shop.js"></script>
+    -->
+</body>
+</html>
